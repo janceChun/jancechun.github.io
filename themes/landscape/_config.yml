@@ -1,8 +1,8 @@
 # Header
 menu:
   Home: /
-  Archives: /janceChun/archives
-rss: /janceChun/atom.xml
+  Archives: archives
+rss: atom.xml
 
 # Content
 excerpt_link: Read More
