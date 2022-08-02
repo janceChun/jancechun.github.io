@@ -114,21 +114,16 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="docker-telegraf-grafana实践"><a href="#docker-telegraf-grafana实践" class="headerlink" title="docker telegraf grafana实践"></a>docker telegraf grafana实践</h2><h3 id="telegraf"><a href="#telegraf" class="headerlink" title="telegraf"></a>telegraf</h3><p> 1.了解数据来源<br> telegrad 的docker插件是采集<a target="_blank" rel="noopener" href="https://github.com/docker/engine-api">docker engine-api</a>的状态,<a target="_blank" rel="noopener" href="https://godoc.org/github.com/docker/engine-api">相关文档说明</a>以及<a target="_blank" rel="noopener" href="https://godoc.org/github.com/docker/engine-api/types#Stats">状态类型说明</a>,<br> 其实就是通过GET &#x2F;containers&#x2F;(id or name)&#x2F;stats.获取相关数据.在linux下你可以通过<br> curl –unix-socket &#x2F;var&#x2F;run&#x2F;docker.sock http:&#x2F;containers&#x2F;(id or name)&#x2F;stats来查看相关数据.<br> 2.数据单位<br> 有了上面知道数据的来源你是不是还在纠结数据的单位,比如为什么cpu值是纳秒?我们怎么转换成核?<br> 经过实践发现他记录的是<br> (待续…)</p>
-
-<div id="gitalk-container"></div>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-		<script>
-		var gitalkConfig = {"clientID":"0d016cc631f508b6e723","clientSecret":"17edd0c4b4116641b3eb685bb9551b1070160b5c","repo":"jancechun.github.io","owner":"janceChun","admin":["janceChun"],"distractionFreeMode":false};
-	    gitalkConfig.id = md5(location.pathname);
-		var gitalk = new Gitalk(gitalkConfig);
-	    gitalk.render("gitalk-container");
-	    </script>
+        <h2 id="docker-telegraf-grafana实践"><a href="#docker-telegraf-grafana实践" class="headerlink" title="docker telegraf grafana实践"></a>docker telegraf grafana实践</h2><h3 id="telegraf"><a href="#telegraf" class="headerlink" title="telegraf"></a>telegraf</h3><p> 1.了解数据来源<br> telegrad 的docker插件是采集<a target="_blank" rel="noopener" href="https://github.com/docker/engine-api">docker engine-api</a>的状态,<a target="_blank" rel="noopener" href="https://godoc.org/github.com/docker/engine-api">相关文档说明</a>以及<a target="_blank" rel="noopener" href="https://godoc.org/github.com/docker/engine-api/types#Stats">状态类型说明</a>,<br> 其实就是通过GET &#x2F;containers&#x2F;(id or name)&#x2F;stats.获取相关数据.在linux下你可以通过<br> curl –unix-socket &#x2F;var&#x2F;run&#x2F;docker.sock http:&#x2F;containers&#x2F;(id or name)&#x2F;stats来查看相关数据.<br>
+        
+          <p class="article-more-link">
+            <a href="/2017-01-09.html#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jancechun.github.io/2017-01-09.html" data-id="cl6cete2v001puqy4awdg30fw" data-title="docker telegraf grafana实践" class="article-share-link">Share</a>
+      <a data-url="https://jancechun.github.io/2017-01-09.html" data-id="cl6cfaosi001wc0y4dg52fp5p" data-title="docker telegraf grafana实践" class="article-share-link">Share</a>
       
       
       
@@ -172,26 +167,15 @@
       
         <p>grafana AMD 配置</p>
 <p>经过测试，基本放在<br>public&#x2F;app<br>public&#x2F;vendor<br>public&#x2F;plugins<br>这三个目录下都能被引入</p>
-<p>采用common.js ：写法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">define([], function () &#123;</span><br><span class="line">  &quot;use strict&quot;;</span><br><span class="line">  function getValue() &#123;</span><br><span class="line">    console.log(&#x27;getValue plugins 111&#x27;)</span><br><span class="line">  &#125;</span><br><span class="line">  return &#123;getValue:getValue&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>然后在要引用的dashaboards&#x2F;a.js里面写上</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">System.import(&#x27;plugins/common&#x27;).then(function(m)&#123;</span><br><span class="line">  m.getValue();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>就可以引用了。</p>
-
-<div id="gitalk-container"></div>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-		<script>
-		var gitalkConfig = {"clientID":"0d016cc631f508b6e723","clientSecret":"17edd0c4b4116641b3eb685bb9551b1070160b5c","repo":"jancechun.github.io","owner":"janceChun","admin":["janceChun"],"distractionFreeMode":false};
-	    gitalkConfig.id = md5(location.pathname);
-		var gitalk = new Gitalk(gitalkConfig);
-	    gitalk.render("gitalk-container");
-	    </script>
+        
+          <p class="article-more-link">
+            <a href="/2017-01-08.html#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jancechun.github.io/2017-01-08.html" data-id="cl6cete2t001juqy4e69uhnww" data-title="grafana AMD" class="article-share-link">Share</a>
+      <a data-url="https://jancechun.github.io/2017-01-08.html" data-id="cl6cfaosj001zc0y4bmck2uj6" data-title="grafana AMD" class="article-share-link">Share</a>
       
       
       
@@ -248,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jancechun.github.io/2017-01-07.html" data-id="cl6cete2v001nuqy4aun4bbqo" data-title="js 代码风格标准" class="article-share-link">Share</a>
+      <a data-url="https://jancechun.github.io/2017-01-07.html" data-id="cl6cfaosd001kc0y449hb7sr3" data-title="js 代码风格标准" class="article-share-link">Share</a>
       
       
       
@@ -304,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jancechun.github.io/2016-12-07.html" data-id="cl6cete2s001cuqy4eyel17wu" data-title="WebStorm 快捷键(Mac)" class="article-share-link">Share</a>
+      <a data-url="https://jancechun.github.io/2016-12-07.html" data-id="cl6cfaosb001ac0y4eyo75rcg" data-title="WebStorm 快捷键(Mac)" class="article-share-link">Share</a>
       
       
       
@@ -358,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jancechun.github.io/2016-12-08.html" data-id="cl6cete2t001huqy4f9uvdddu" data-title="js promise" class="article-share-link">Share</a>
+      <a data-url="https://jancechun.github.io/2016-12-08.html" data-id="cl6cfaosc001hc0y4bqoj2vqy" data-title="js promise" class="article-share-link">Share</a>
       
       
       
@@ -410,7 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jancechun.github.io/2016-11-29.html" data-id="cl6cete2r0019uqy4126hbi6g" data-title="jekyll 迁移到 hexo" class="article-share-link">Share</a>
+      <a data-url="https://jancechun.github.io/2016-11-29.html" data-id="cl6cfaosb001cc0y4f8wjh5ii" data-title="jekyll 迁移到 hexo" class="article-share-link">Share</a>
       
       
       
@@ -461,7 +445,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jancechun.github.io/2016-08-30.html" data-id="cl6cete2q0015uqy47hfahlve" data-title="nodejs 快速搭建前后端分离" class="article-share-link">Share</a>
+      <a data-url="https://jancechun.github.io/2016-08-30.html" data-id="cl6cfaos90015c0y4h7jr7yd3" data-title="nodejs 快速搭建前后端分离" class="article-share-link">Share</a>
       
       
       
@@ -504,24 +488,16 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <ol>
-<li>svn log -r version -v<br>查看该版本的提交修改文件路径信息(Changed paths:XXX.*)</li>
-<li>svn log | sed -n ‘&#x2F;USERNAME&#x2F;,&#x2F;—–$&#x2F; p’<br>查看该用户USERNAME,提交的xinx</li>
-<li>svn diff -c version<br>查看该版本的提交文件修改详情</li>
-</ol>
-
-<div id="gitalk-container"></div>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-		<script>
-		var gitalkConfig = {"clientID":"0d016cc631f508b6e723","clientSecret":"17edd0c4b4116641b3eb685bb9551b1070160b5c","repo":"jancechun.github.io","owner":"janceChun","admin":["janceChun"],"distractionFreeMode":false};
-	    gitalkConfig.id = md5(location.pathname);
-		var gitalk = new Gitalk(gitalkConfig);
-	    gitalk.render("gitalk-container");
-	    </script>
+<li>svn log -r version -v<br>查看该版本的提交修改文件路径信息(Changed paths:XXX.*)
+        
+          <p class="article-more-link">
+            <a href="/2016-07-15.html#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jancechun.github.io/2016-07-15.html" data-id="cl6cete2p0012uqy4h8fo1tu2" data-title="svn 超级实用命令" class="article-share-link">Share</a>
+      <a data-url="https://jancechun.github.io/2016-07-15.html" data-id="cl6cfaos7000zc0y4btr93wfp" data-title="svn 超级实用命令" class="article-share-link">Share</a>
       
       
       
@@ -564,24 +540,16 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <ol>
-<li>关于cron<br>一般来说cron预设有三个地方会有执行脚本设定档,分别为:<br><code>/etc/crontab</code>  crontab 会执行的设定档<br><code>/etc/cron.d/*</code> cron 会执行的设定档<br><code>/var/spool/cron/*</code>  crontab -e  存放的位置<br>一般执行顺序是<code>/etc/cron.d/</code>优先级最高,<code>/etc/cron.d/*</code>次之,<code>/var/spool/cron/*</code>最后.<br>而且防止<code>/etc/cron.d/</code>的配置文件一般<code>* * * * * root bash xxx.sh</code>,<br><code>/var/spool/cron/*</code>则为<code>* * * * * xxx.sh</code>,并且xxx.sh必须具有执行权限 </li>
-<li>当cron执行错误的时候如果系统有邮件发送功能,你会收到cron运行出错的信息</li>
-<li>docker 配置,只要在CMD 的时候启动cron就行了,把你的cron配置放置在<code>/etc/cron.d/</code>下<br>或者crontab crontabconfig就可以啦</li>
-</ol>
-
-<div id="gitalk-container"></div>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-		<script>
-		var gitalkConfig = {"clientID":"0d016cc631f508b6e723","clientSecret":"17edd0c4b4116641b3eb685bb9551b1070160b5c","repo":"jancechun.github.io","owner":"janceChun","admin":["janceChun"],"distractionFreeMode":false};
-	    gitalkConfig.id = md5(location.pathname);
-		var gitalk = new Gitalk(gitalkConfig);
-	    gitalk.render("gitalk-container");
-	    </script>
+<li>关于cron<br>一般来说cron预设有三个地方会有执行脚本设定档,分别为:
+        
+          <p class="article-more-link">
+            <a href="/2016-07-01.html#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jancechun.github.io/2016-07-01.html" data-id="cl6cete2p000zuqy4frer5b59" data-title="docker cron任务以及常见问题" class="article-share-link">Share</a>
+      <a data-url="https://jancechun.github.io/2016-07-01.html" data-id="cl6cfaos6000wc0y453ap50w6" data-title="docker cron任务以及常见问题" class="article-share-link">Share</a>
       
       
       
@@ -632,7 +600,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jancechun.github.io/2016-06-28.html" data-id="cl6cete2o000uuqy4f7qwa117" data-title=" 使用brew安装mysql遇到的若干问题的解决方案" class="article-share-link">Share</a>
+      <a data-url="https://jancechun.github.io/2016-06-28.html" data-id="cl6cfaos6000tc0y4a5p08lat" data-title=" 使用brew安装mysql遇到的若干问题的解决方案" class="article-share-link">Share</a>
       
       
       

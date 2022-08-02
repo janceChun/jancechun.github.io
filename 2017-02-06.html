@@ -27,7 +27,7 @@
 <meta property="og:description" content="搭建企业私有registry">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-02-05T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-07-29T05:42:58.327Z">
+<meta property="article:modified_time" content="2022-08-02T16:54:24.239Z">
 <meta property="article:author" content="janceChun">
 <meta property="article:tag" content="npm registry">
 <meta name="twitter:card" content="summary">
@@ -118,6 +118,8 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h2 id="网上找到的三种搭建搭建企业私有registry方式"><a href="#网上找到的三种搭建搭建企业私有registry方式" class="headerlink" title="网上找到的三种搭建搭建企业私有registry方式"></a>网上找到的三种搭建搭建企业私有registry方式</h2><p>一、CouchDB+ npm-registry-couchapp+ kappa（官网提供的方法<a target="_blank" rel="noopener" href="https://docs.npmjs.com/misc/registry%EF%BC%89">https://docs.npmjs.com/misc/registry）</a><br><a target="_blank" rel="noopener" href="https://github.com/npm/npm-registry-couchapp">https://github.com/npm/npm-registry-couchapp</a><br>但是npm-registry-couchapp说不会接受任何pull请求，也不会对此代码库进行任何更改。<br>相关的实现与资料有<br><a target="_blank" rel="noopener" href="http://ju.outofmemory.cn/entry/108287">http://ju.outofmemory.cn/entry/108287</a></p>
+<span id="more"></span>
+
 <p>二、 cnpm（淘宝镜像搭建，数据库是mysql，最新commit是17年一月）<br><a target="_blank" rel="noopener" href="https://github.com/cnpm/cnpmjs.org">https://github.com/cnpm/cnpmjs.org</a><br>相关实践<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/20814612">https://zhuanlan.zhihu.com/p/20814612</a><br><a target="_blank" rel="noopener" href="http://blog.fens.me/nodejs-cnpm-npm/">http://blog.fens.me/nodejs-cnpm-npm/</a><br>另外  有关为什么有cnpm我看到有一篇淘宝的ppt<br><a target="_blank" rel="noopener" href="http://deadhorse.me/slides/npm-enterprise-in-ali.pdf%E3%80%82">http://deadhorse.me/slides/npm-enterprise-in-ali.pdf。</a><br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=tUm8ak5an-4">https://www.youtube.com/watch?v=tUm8ak5an-4</a><br><a target="_blank" rel="noopener" href="http://2014.jsdc.tw/talks/mk2.pdf">http://2014.jsdc.tw/talks/mk2.pdf</a></p>
 <p>三、sinopia<br><a target="_blank" rel="noopener" href="https://github.com/rlidwka/sinopia">https://github.com/rlidwka/sinopia</a><br>sinopia 的更新机制，metadata 是采用 TTL 的方式缓存的，默认缓存时间只有两分钟，两分钟后再次请求同一个包的 metadata 会再次向源去请求最新的信息，虽然 timeout 的话也会返回原本的请求，但我感觉去源取信息太频繁了，而且也绑定在几乎每个请求上（2m 缓存对使用不频繁的小团队根本没解决多少问题啊），所以对时间和网络请求上都会有一些浪费不够合理。另外原版的 sinopia 已经早不维护了，似乎作者不见了踪影（来自<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/20715004">https://zhuanlan.zhihu.com/p/20715004</a></p>
 
@@ -133,7 +135,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jancechun.github.io/2017-02-06.html" data-id="cl6cete300021uqy476uc01ki" data-title="搭建企业私有registry实践(一)" class="article-share-link">Share</a>
+      <a data-url="https://jancechun.github.io/2017-02-06.html" data-id="cl6cfaosk0026c0y48msqgxu7" data-title="搭建企业私有registry实践(一)" class="article-share-link">Share</a>
       
       
       

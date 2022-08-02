@@ -19,17 +19,17 @@
   
   <title>js数字溢出问题 | janceChun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="JavaScript数字超过边界值,无法保证低位数字的精度 今天在群上讨论说数字精度溢出问题 然后有人举出了,下图的情况: 由图片看出觉得对哇,好想不会溢出,会被自动处理为科学计算法但是看下图,你会知道其实还是溢出的 超过边界的时候会影响低位数字的精度,所以图1看不出什么影响图2的parseInt(&quot;1&quot;.repeat(53),2)+1;输出9 007 199 254 740">
+  <meta name="description" content="JavaScript数字超过边界值,无法保证低位数字的精度 今天在群上讨论说数字精度溢出问题 然后有人举出了,下图的情况:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js数字溢出问题">
 <meta property="og:url" content="https://jancechun.github.io/2016-06-01.html">
 <meta property="og:site_name" content="janceChun">
-<meta property="og:description" content="JavaScript数字超过边界值,无法保证低位数字的精度 今天在群上讨论说数字精度溢出问题 然后有人举出了,下图的情况: 由图片看出觉得对哇,好想不会溢出,会被自动处理为科学计算法但是看下图,你会知道其实还是溢出的 超过边界的时候会影响低位数字的精度,所以图1看不出什么影响图2的parseInt(&quot;1&quot;.repeat(53),2)+1;输出9 007 199 254 740">
+<meta property="og:description" content="JavaScript数字超过边界值,无法保证低位数字的精度 今天在群上讨论说数字精度溢出问题 然后有人举出了,下图的情况:">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jancechun.github.io/images/2016-06-01.jpg">
 <meta property="og:image" content="https://jancechun.github.io/images/2016-06-01-1.jpg">
 <meta property="article:published_time" content="2016-05-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-07-29T08:22:29.195Z">
+<meta property="article:modified_time" content="2022-08-02T16:53:26.763Z">
 <meta property="article:author" content="janceChun">
 <meta property="article:tag" content="js数字溢出">
 <meta name="twitter:card" content="summary">
@@ -120,7 +120,9 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="JavaScript数字超过边界值-无法保证低位数字的精度"><a href="#JavaScript数字超过边界值-无法保证低位数字的精度" class="headerlink" title="JavaScript数字超过边界值,无法保证低位数字的精度"></a>JavaScript数字超过边界值,无法保证<code>低位数字</code>的精度</h2><p> 今天在群上讨论说数字精度溢出问题<br> 然后有人举出了,下图的情况:<br> <img src="/images/2016-06-01.jpg"><br>由图片看出觉得对哇,好想不会溢出,会被自动处理为科学计算法<br>但是看下图,你会知道其实还是溢出的<br> <img src="/images/2016-06-01-1.jpg"><br>超过边界的时候会影响<code>低位数字</code>的精度,所以图1看不出什么影响<br>图2的<code>parseInt(&quot;1&quot;.repeat(53),2)+1</code>;输出<code>9 007 199 254 740 992</code>,<br><code>parseInt(&quot;1&quot;.repeat(53),2)+2</code>;也输出<code>9 007 199 254 740 992</code> </p>
+        <h2 id="JavaScript数字超过边界值-无法保证低位数字的精度"><a href="#JavaScript数字超过边界值-无法保证低位数字的精度" class="headerlink" title="JavaScript数字超过边界值,无法保证低位数字的精度"></a>JavaScript数字超过边界值,无法保证<code>低位数字</code>的精度</h2><p> 今天在群上讨论说数字精度溢出问题<br> 然后有人举出了,下图的情况:<br> <img src="/images/2016-06-01.jpg"></p>
+ <span id="more"></span>
+<p>由图片看出觉得对哇,好想不会溢出,会被自动处理为科学计算法<br>但是看下图,你会知道其实还是溢出的<br> <img src="/images/2016-06-01-1.jpg"><br>超过边界的时候会影响<code>低位数字</code>的精度,所以图1看不出什么影响<br>图2的<code>parseInt(&quot;1&quot;.repeat(53),2)+1</code>;输出<code>9 007 199 254 740 992</code>,<br><code>parseInt(&quot;1&quot;.repeat(53),2)+2</code>;也输出<code>9 007 199 254 740 992</code> </p>
 
 <div id="gitalk-container"></div>
 <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
@@ -134,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jancechun.github.io/2016-06-01.html" data-id="cl6cete2l000kuqy4ak4udb1i" data-title="js数字溢出问题" class="article-share-link">Share</a>
+      <a data-url="https://jancechun.github.io/2016-06-01.html" data-id="cl6cfaos5000oc0y44t84gbjt" data-title="js数字溢出问题" class="article-share-link">Share</a>
       
       
       

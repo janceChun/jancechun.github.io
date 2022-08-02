@@ -19,15 +19,15 @@
   
   <title>docker cron任务以及常见问题 | janceChun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="关于cron一般来说cron预设有三个地方会有执行脚本设定档,分别为:&#x2F;etc&#x2F;crontab  crontab 会执行的设定档&#x2F;etc&#x2F;cron.d&#x2F;* cron 会执行的设定档&#x2F;var&#x2F;spool&#x2F;cron&#x2F;*  crontab -e  存放的位置一般执行顺序是&#x2F;etc&#x2F;cron.d&#x2F;优先级最高,&#x2F;etc&#x2F;cron.d&#x2F;*次之,&#x2F;var&#x2F;spool&#x2F;cron&#x2F;*最后.而且防止&#x2F;etc&#x2F;cro">
+  <meta name="description" content="关于cron一般来说cron预设有三个地方会有执行脚本设定档,分别为:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker cron任务以及常见问题">
 <meta property="og:url" content="https://jancechun.github.io/2016-07-01.html">
 <meta property="og:site_name" content="janceChun">
-<meta property="og:description" content="关于cron一般来说cron预设有三个地方会有执行脚本设定档,分别为:&#x2F;etc&#x2F;crontab  crontab 会执行的设定档&#x2F;etc&#x2F;cron.d&#x2F;* cron 会执行的设定档&#x2F;var&#x2F;spool&#x2F;cron&#x2F;*  crontab -e  存放的位置一般执行顺序是&#x2F;etc&#x2F;cron.d&#x2F;优先级最高,&#x2F;etc&#x2F;cron.d&#x2F;*次之,&#x2F;var&#x2F;spool&#x2F;cron&#x2F;*最后.而且防止&#x2F;etc&#x2F;cro">
+<meta property="og:description" content="关于cron一般来说cron预设有三个地方会有执行脚本设定档,分别为:">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2016-06-30T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-07-29T05:42:58.200Z">
+<meta property="article:modified_time" content="2022-08-02T16:53:47.864Z">
 <meta property="article:author" content="janceChun">
 <meta property="article:tag" content="docker">
 <meta property="article:tag" content="cron">
@@ -119,10 +119,9 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <ol>
-<li>关于cron<br>一般来说cron预设有三个地方会有执行脚本设定档,分别为:<br><code>/etc/crontab</code>  crontab 会执行的设定档<br><code>/etc/cron.d/*</code> cron 会执行的设定档<br><code>/var/spool/cron/*</code>  crontab -e  存放的位置<br>一般执行顺序是<code>/etc/cron.d/</code>优先级最高,<code>/etc/cron.d/*</code>次之,<code>/var/spool/cron/*</code>最后.<br>而且防止<code>/etc/cron.d/</code>的配置文件一般<code>* * * * * root bash xxx.sh</code>,<br><code>/var/spool/cron/*</code>则为<code>* * * * * xxx.sh</code>,并且xxx.sh必须具有执行权限 </li>
-<li>当cron执行错误的时候如果系统有邮件发送功能,你会收到cron运行出错的信息</li>
-<li>docker 配置,只要在CMD 的时候启动cron就行了,把你的cron配置放置在<code>/etc/cron.d/</code>下<br>或者crontab crontabconfig就可以啦</li>
+<li>关于cron<br>一般来说cron预设有三个地方会有执行脚本设定档,分别为:  <span id="more"></span></li>
 </ol>
+<p><code>/etc/crontab</code>  crontab 会执行的设定档<br><code>/etc/cron.d/*</code> cron 会执行的设定档<br><code>/var/spool/cron/*</code>  crontab -e  存放的位置<br>一般执行顺序是<code>/etc/cron.d/</code>优先级最高,<code>/etc/cron.d/*</code>次之,<code>/var/spool/cron/*</code>最后.<br>而且防止<code>/etc/cron.d/</code>的配置文件一般<code>* * * * * root bash xxx.sh</code>,<br><code>/var/spool/cron/*</code>则为<code>* * * * * xxx.sh</code>,并且xxx.sh必须具有执行权限<br>2. 当cron执行错误的时候如果系统有邮件发送功能,你会收到cron运行出错的信息<br>3. docker 配置,只要在CMD 的时候启动cron就行了,把你的cron配置放置在<code>/etc/cron.d/</code>下<br>或者crontab crontabconfig就可以啦</p>
 
 <div id="gitalk-container"></div>
 <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
@@ -136,7 +135,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jancechun.github.io/2016-07-01.html" data-id="cl6cete2p000zuqy4frer5b59" data-title="docker cron任务以及常见问题" class="article-share-link">Share</a>
+      <a data-url="https://jancechun.github.io/2016-07-01.html" data-id="cl6cfaos6000wc0y453ap50w6" data-title="docker cron任务以及常见问题" class="article-share-link">Share</a>
       
       
       
