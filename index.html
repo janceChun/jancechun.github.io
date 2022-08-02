@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="code-eNJWzxzd8J" />
+  <meta name="google-site-verification" content="M18XdAWwaOCGMRZTwx7Bjq4w7IeciCJxhsH3LZv8jtg" />
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-69718833-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69718833-3');
+</script>
+<!-- End Google Analytics -->
+
+  
+  <title>janceChun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="janceChun">
+<meta property="og:url" content="https://jancechun.github.io/index.html">
+<meta property="og:site_name" content="janceChun">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="janceChun">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+  <body>
+    <div id="container">
+      <div id="wrap">
+        <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <!-- <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">janceChun</a>
+      </h1>
+      
+    </div> -->
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">
+            Home
+          </a>
+        
+          <a class="main-nav-link" href="/archives">
+            Archives
+          </a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a  id="nav-github" class="nav-icon" target="_blank" rel="noopener" href="https://github.com/janceChun" title="github"></a>
+        
+        
+          <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jancechun.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+          <div class="outer">
+            <section id="main">
+              
+  
+    <article id="post-2022-06-18" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2022-06-18.html" class="article-date">
+  <time class="dt-published" datetime="2022-06-17T16:00:00.000Z" itemprop="datePublished">2022-06-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/chrome/">chrome</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022-06-18.html">浏览器渲染原理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>浏览器渲染进程(rendering process)是以管道形式（rendering pipeline）渲染的，管道形式渲染的当前步骤都依赖于上一步骤的结果，<br>因此更新渲染成本很高。</p>
+<p>浏览器渲染进程包含了 主进程(main thread)， 合成线程（compositor thread），光栅线程（raster thread）,  worker 线程(worker theads)</p>
+<p><img src="https://user-images.githubusercontent.com/4457572/181687467-3853bec7-ffb5-4f3d-b1c2-d63f237ffae4.png" alt="image"></p>
+        
+          <p class="article-more-link">
+            <a href="/2022-06-18.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2022-06-18.html" data-id="cl6ccwyfp003j9ty4eisq25s7" data-title="浏览器渲染原理" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/" rel="tag">chrome</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+    <article id="post-2022-06-10" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2022-06-10.html" class="article-date">
+  <time class="dt-published" datetime="2022-06-09T16:00:00.000Z" itemprop="datePublished">2022-06-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/css/">css</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022-06-10.html">rem js计算方案改成css计算</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h3><ul>
+<li>@yy&#x2F;ho-flexible<ul>
+<li><p>触发多次回流 </p>
+<p><img src="https://user-images.githubusercontent.com/4457572/177524648-48aedc93-e933-431c-9de0-c70370d6aada.png" alt="image"></p>
+ <img width="1276" alt="image" src="https://user-images.githubusercontent.com/4457572/177522006-040917d1-539c-4975-abdd-cd96209f2c9f.png">
+
+<p>  getComputedStyle.width （1rem）<br> style.fontSize </p>
+</li>
+<li><p>监听resize，pageshow事件变化重置大小会出现抖动</p>
+</li>
+</ul>
+</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2022-06-10.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2022-06-10.html" data-id="cl6ccwyfo003g9ty4hptldfha" data-title="rem js计算方案改成css计算" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rem/" rel="tag">rem</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+    <article id="post-2021-03-18" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2021-03-18.html" class="article-date">
+  <time class="dt-published" datetime="2021-03-17T16:00:00.000Z" itemprop="datePublished">2021-03-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021-03-18.html">设计模式-多态</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>问题描述：</p>
+<p>Animal类里面所有动物都能吃，能走， 但是就叫声不一样。</p>
+<p>狗属于动物能走，能吃，叫“汪汪汪”。</p>
+<p>猫属于动物能走，能吃，叫喵喵喵。</p>
+<p>请实现：实现狗这个类，实现猫这个类（狗类，猫类共同拥有动物的正常吃，正常走）</p>
+        
+          <p class="article-more-link">
+            <a href="/2021-03-18.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2021-03-18.html" data-id="cl6ccwyfn003b9ty4e2d87rky" data-title="设计模式-多态" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+    <article id="post-2019-12-04" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2019-12-04.html" class="article-date">
+  <time class="dt-published" datetime="2019-12-03T16:00:00.000Z" itemprop="datePublished">2019-12-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/css/">css</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019-12-04.html">常见问题CSS设置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>Li 自定义样式并且自动递增<br>添加 counter-reset、content</li>
+</ol>
+<p>效果如下</p>
+<p><img src="/images/2019-12-04-1.webp"></p>
+        
+          <p class="article-more-link">
+            <a href="/2019-12-04.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2019-12-04.html" data-id="cl6ccwyfl00379ty4eh6a3wln" data-title="常见问题CSS设置" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+    <article id="post-2018-10-18" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2018-10-18.html" class="article-date">
+  <time class="dt-published" datetime="2018-10-17T16:00:00.000Z" itemprop="datePublished">2018-10-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Sentry-docker/">Sentry docker</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018-10-18.html">docker sentry 配置企业ldap</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>set the dockfile<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FROM sentry:9.0-onbuild</span><br><span class="line">RUN apt-get update &amp;&amp; apt-get install -y libsasl2-dev python-dev libldap2-dev libssl-dev</span><br><span class="line">RUN pip install sentry-ldap-auth</span><br></pre></td></tr></table></figure></li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2018-10-18.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2018-10-18.html" data-id="cl6ccwyfm003a9ty41hfx9aub" data-title="docker sentry 配置企业ldap" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sentry/" rel="tag">Sentry</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+    <article id="post-2018-10-17" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2018-10-17.html" class="article-date">
+  <time class="dt-published" datetime="2018-10-16T16:00:00.000Z" itemprop="datePublished">2018-10-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Sentry/">Sentry</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018-10-17.html">Sentry部署</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <!-- ###  Sentry线上部署情况
+目前只是部署在无锡、中山两台服务器，
+数据库redies数据库是公司redis集群，
+可以触发邮件短信通知。 -->
+
+<h3 id="postgresql初始化"><a href="#postgresql初始化" class="headerlink" title="postgresql初始化"></a>postgresql初始化</h3> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">postgreSql    createdb -E utf-8 sentry</span><br><span class="line">alter role feteam superuser;</span><br><span class="line">sentry upgrade</span><br><span class="line">sentry config generate-secret-key</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018-10-17.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2018-10-17.html" data-id="cl6ccwyfk00309ty4hoez1a7g" data-title="Sentry部署" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sentry/" rel="tag">Sentry</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+    <article id="post-2018-08-32" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2018-08-32.html" class="article-date">
+  <time class="dt-published" datetime="2018-08-31T16:00:00.000Z" itemprop="datePublished">2018-09-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018-08-32.html">验证码识别入门</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h2><ul>
+<li><strong>灰度</strong></li>
+</ul>
+<p>使用黑色调表示物体，不同的饱和度的黑色来显示图像，灰度值范围为<code>0～255</code>。</p>
+<ul>
+<li><strong>图像灰度化</strong></li>
+</ul>
+<p>图像灰度化就是让像素点矩阵中的每个像素点满足关系： <code>R=G=B</code></p>
+<div style="display:flex">
+<img src="/blog/images/2018-08-32-yy.jpg" width=256 />
+<img src="/blog/images/2018-08-32-yy_gray.png" width=256/>
+</div>
+
+<ul>
+<li><strong>图像二值化</strong></li>
+</ul>
+<p>将图像上的像素点的灰度值设置为<code>0 || 255</code></p>
+<div style="display:flex">
+<img src="/blog/images/2018-08-32-yy.jpg" width=256 />
+<img src="/blog/images/2018-08-32-yy_thresh.png" width=256/>
+</div>
+        
+          <p class="article-more-link">
+            <a href="/2018-08-32.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2018-08-32.html" data-id="cl6ccwyfl00349ty439y6cmgn" data-title="验证码识别入门" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+    <article id="post-2018-08-31" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2018-08-31.html" class="article-date">
+  <time class="dt-published" datetime="2018-08-30T16:00:00.000Z" itemprop="datePublished">2018-08-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018-08-31.html">Scrapy 入门</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/2018-08-31-fgg.png"><br><img src="/images/2018-08-31-CH2kvQ.png"></p>
+        
+          <p class="article-more-link">
+            <a href="/2018-08-31.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2018-08-31.html" data-id="cl6ccwyfj002x9ty4cqt017st" data-title="Scrapy 入门" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+    <article id="post-2018-06-01" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2018-06-01.html" class="article-date">
+  <time class="dt-published" datetime="2018-05-31T16:00:00.000Z" itemprop="datePublished">2018-06-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018-06-01.html">python 环境安装</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Ubuntu安装"><a href="#Ubuntu安装" class="headerlink" title="Ubuntu安装"></a>Ubuntu安装</h2><blockquote>
+<p>以下是以 Ubuntu 16.04 LTS 为例子演示安装情况</p>
+</blockquote>
+<h3 id="查看系统类型"><a href="#查看系统类型" class="headerlink" title="查看系统类型"></a>查看系统类型</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsb_release -a</span><br></pre></td></tr></table></figure>
+
+<p>你会看到以下信息系统内核 Codename：xenial， 系统版本 Release：16.04</p>
+        
+          <p class="article-more-link">
+            <a href="/2018-06-01.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2018-06-01.html" data-id="cl6ccwyfi002u9ty4gsu0cosm" data-title="python 环境安装" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+    <article id="post-2018-04-03" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2018-04-03.html" class="article-date">
+  <time class="dt-published" datetime="2018-04-02T16:00:00.000Z" itemprop="datePublished">2018-04-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018-04-03.html">js 事件复习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="js事件"><a href="#js事件" class="headerlink" title="js事件"></a>js事件</h1><p><em>DOM</em>文档对象模型<br><em>事件</em>用户或浏览器执行的动作<br><em>事件处理程序</em>（事件监听器）响应某个<em>事件</em>的<em>函数</em></p>
+        
+          <p class="article-more-link">
+            <a href="/2018-04-03.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2018-04-03.html" data-id="cl6ccwyfi002q9ty4dlfwfrxh" data-title="js 事件复习" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
+
+
+            </section>
+            
+              <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Sentry/">Sentry</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sentry-docker/">Sentry docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/WebStorm/">WebStorm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/charles-https/">charles https</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/chrome/">chrome</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/grafana/">grafana</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/html5/">html5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/influxdb/">influxdb</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/npm/">npm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">JavaScript数据类型与数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sentry/" rel="tag">Sentry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebStorm/" rel="tag">WebStorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/" rel="tag">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/charles/" rel="tag">charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/" rel="tag">chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cron/" rel="tag">cron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" rel="tag">css垂直居中</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/" rel="tag">css文字对齐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-telegraf-grafana%E5%AE%9E%E8%B7%B5/" rel="tag">docker telegraf grafana实践</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/font/" rel="tag">font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grafana/" rel="tag">grafana</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5-download/" rel="tag">html5 download</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/htpps/" rel="tag">htpps</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http-%E7%BC%93%E5%AD%98/" rel="tag">http  缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http-%E7%BC%93%E5%AD%98/" rel="tag">http 缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/influxdb-non-negative-derivative/" rel="tag">influxdb non_negative_derivative</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll-%E8%BF%81%E7%A7%BB%E5%88%B0-hexo/" rel="tag">jekyll 迁移到 hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-promise/" rel="tag">js promise</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js%E6%95%B0%E5%AD%97%E6%BA%A2%E5%87%BA/" rel="tag">js数字溢出</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql-brew/" rel="tag">mysql brew</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm-registry/" rel="tag">npm registry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rem/" rel="tag">rem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/" rel="tag">svn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/" rel="tag">前后端分离</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">JavaScript数据类型与数据结构</a> <a href="/tags/Sentry/" style="font-size: 13.33px;">Sentry</a> <a href="/tags/WebStorm/" style="font-size: 10px;">WebStorm</a> <a href="/tags/ajax/" style="font-size: 16.67px;">ajax</a> <a href="/tags/angular/" style="font-size: 20px;">angular</a> <a href="/tags/charles/" style="font-size: 10px;">charles</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/cron/" style="font-size: 10px;">cron</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/css%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" style="font-size: 10px;">css垂直居中</a> <a href="/tags/css%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/" style="font-size: 10px;">css文字对齐</a> <a href="/tags/docker/" style="font-size: 13.33px;">docker</a> <a href="/tags/docker-telegraf-grafana%E5%AE%9E%E8%B7%B5/" style="font-size: 10px;">docker telegraf grafana实践</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/grafana/" style="font-size: 13.33px;">grafana</a> <a href="/tags/html5-download/" style="font-size: 10px;">html5 download</a> <a href="/tags/htpps/" style="font-size: 10px;">htpps</a> <a href="/tags/http-%E7%BC%93%E5%AD%98/" style="font-size: 10px;">http  缓存</a> <a href="/tags/http-%E7%BC%93%E5%AD%98/" style="font-size: 10px;">http 缓存</a> <a href="/tags/influxdb-non-negative-derivative/" style="font-size: 10px;">influxdb non_negative_derivative</a> <a href="/tags/javascript/" style="font-size: 13.33px;">javascript</a> <a href="/tags/jekyll-%E8%BF%81%E7%A7%BB%E5%88%B0-hexo/" style="font-size: 10px;">jekyll 迁移到 hexo</a> <a href="/tags/js-promise/" style="font-size: 10px;">js promise</a> <a href="/tags/js%E6%95%B0%E5%AD%97%E6%BA%A2%E5%87%BA/" style="font-size: 10px;">js数字溢出</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/mysql-brew/" style="font-size: 10px;">mysql brew</a> <a href="/tags/nodejs/" style="font-size: 16.67px;">nodejs</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/npm-registry/" style="font-size: 13.33px;">npm registry</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/" style="font-size: 10px;">前后端分离</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">设计模式</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022-06-18.html">浏览器渲染原理</a>
+          </li>
+        
+          <li>
+            <a href="/2022-06-10.html">rem js计算方案改成css计算</a>
+          </li>
+        
+          <li>
+            <a href="/2021-03-18.html">设计模式-多态</a>
+          </li>
+        
+          <li>
+            <a href="/2019-12-04.html">常见问题CSS设置</a>
+          </li>
+        
+          <li>
+            <a href="/2018-10-18.html">docker sentry 配置企业ldap</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+                
+          </div>
+          <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 janceChun<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+      </div>
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link" >
+      Home
+    </a>
+  
+    <a href="/archives" class="mobile-nav-link" >
+      Archives
+    </a>
+  
+</nav>
+        
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+    </div>
+  </body>
+
+</html>

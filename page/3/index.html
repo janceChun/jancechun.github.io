@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="code-eNJWzxzd8J" />
+  <meta name="google-site-verification" content="M18XdAWwaOCGMRZTwx7Bjq4w7IeciCJxhsH3LZv8jtg" />
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-69718833-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69718833-3');
+</script>
+<!-- End Google Analytics -->
+
+  
+  <title>janceChun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="janceChun">
+<meta property="og:url" content="https://jancechun.github.io/page/3/index.html">
+<meta property="og:site_name" content="janceChun">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="janceChun">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+  <body>
+    <div id="container">
+      <div id="wrap">
+        <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <!-- <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">janceChun</a>
+      </h1>
+      
+    </div> -->
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">
+            Home
+          </a>
+        
+          <a class="main-nav-link" href="/archives">
+            Archives
+          </a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a  id="nav-github" class="nav-icon" target="_blank" rel="noopener" href="https://github.com/janceChun" title="github"></a>
+        
+        
+          <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jancechun.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+          <div class="outer">
+            <section id="main">
+              
+  
+    <article id="post-2017-01-09" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2017-01-09.html" class="article-date">
+  <time class="dt-published" datetime="2017-01-08T16:00:00.000Z" itemprop="datePublished">2017-01-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/docker/">docker</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2017-01-09.html">docker telegraf grafana实践</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="docker-telegraf-grafana实践"><a href="#docker-telegraf-grafana实践" class="headerlink" title="docker telegraf grafana实践"></a>docker telegraf grafana实践</h2><h3 id="telegraf"><a href="#telegraf" class="headerlink" title="telegraf"></a>telegraf</h3><p> 1.了解数据来源<br> telegrad 的docker插件是采集<a target="_blank" rel="noopener" href="https://github.com/docker/engine-api">docker engine-api</a>的状态,<a target="_blank" rel="noopener" href="https://godoc.org/github.com/docker/engine-api">相关文档说明</a>以及<a target="_blank" rel="noopener" href="https://godoc.org/github.com/docker/engine-api/types#Stats">状态类型说明</a>,<br> 其实就是通过GET &#x2F;containers&#x2F;(id or name)&#x2F;stats.获取相关数据.在linux下你可以通过<br> curl –unix-socket &#x2F;var&#x2F;run&#x2F;docker.sock http:&#x2F;containers&#x2F;(id or name)&#x2F;stats来查看相关数据.<br> 2.数据单位<br> 有了上面知道数据的来源你是不是还在纠结数据的单位,比如为什么cpu值是纳秒?我们怎么转换成核?<br> 经过实践发现他记录的是<br> (待续…)</p>
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"clientID":"0d016cc631f508b6e723","clientSecret":"17edd0c4b4116641b3eb685bb9551b1070160b5c","repo":"blog","owner":"janceChun","admin":["janceChun"],"distractionFreeMode":false};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2017-01-09.html" data-id="cl6ccwyf7001p9ty4fosr802r" data-title="docker telegraf grafana实践" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker-telegraf-grafana%E5%AE%9E%E8%B7%B5/" rel="tag">docker telegraf grafana实践</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+    <article id="post-2017-01-08" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2017-01-08.html" class="article-date">
+  <time class="dt-published" datetime="2017-01-07T16:00:00.000Z" itemprop="datePublished">2017-01-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/grafana/">grafana</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2017-01-08.html">grafana AMD</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>grafana AMD 配置</p>
+<p>经过测试，基本放在<br>public&#x2F;app<br>public&#x2F;vendor<br>public&#x2F;plugins<br>这三个目录下都能被引入</p>
+<p>采用common.js ：写法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">define([], function () &#123;</span><br><span class="line">  &quot;use strict&quot;;</span><br><span class="line">  function getValue() &#123;</span><br><span class="line">    console.log(&#x27;getValue plugins 111&#x27;)</span><br><span class="line">  &#125;</span><br><span class="line">  return &#123;getValue:getValue&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>然后在要引用的dashaboards&#x2F;a.js里面写上</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">System.import(&#x27;plugins/common&#x27;).then(function(m)&#123;</span><br><span class="line">  m.getValue();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>就可以引用了。</p>
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"clientID":"0d016cc631f508b6e723","clientSecret":"17edd0c4b4116641b3eb685bb9551b1070160b5c","repo":"blog","owner":"janceChun","admin":["janceChun"],"distractionFreeMode":false};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2017-01-08.html" data-id="cl6ccwyf6001n9ty45n8zfln0" data-title="grafana AMD" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/grafana/" rel="tag">grafana</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+    <article id="post-2017-01-07" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2017-01-07.html" class="article-date">
+  <time class="dt-published" datetime="2017-01-06T16:00:00.000Z" itemprop="datePublished">2017-01-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2017-01-07.html">js 代码风格标准</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="Jslint（检测工具）有以下几种"><a href="#Jslint（检测工具）有以下几种" class="headerlink" title="Jslint（检测工具）有以下几种"></a>Jslint（检测工具）有以下几种</h3><h4 id="jslint"><a href="#jslint" class="headerlink" title="jslint"></a>jslint</h4><pre><code>优点：默认配置好，无需自己再重新定义
+缺点：
+有限的配置选项，很多规则不能禁用
+规范严格，凡是不符合都会有警告
+扩展性差
+无法根据错误定位到对应的规则
+</code></pre>
+        
+          <p class="article-more-link">
+            <a href="/2017-01-07.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2017-01-07.html" data-id="cl6ccwyf5001j9ty4dcys8hv0" data-title="js 代码风格标准" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/grafana/" rel="tag">grafana</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+    <article id="post-2016-12-07" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2016-12-07.html" class="article-date">
+  <time class="dt-published" datetime="2016-12-06T16:00:00.000Z" itemprop="datePublished">2016-12-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/WebStorm/">WebStorm</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2016-12-07.html">WebStorm 快捷键(Mac)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>⌘——Command</p>
+<p>⌃ ——Control</p>
+<p>⌥——alt</p>
+<p>⇧——Shift</p>
+<p>⇪——Caps Lock</p>
+<p>fn——功能键就是fn</p>
+        
+          <p class="article-more-link">
+            <a href="/2016-12-07.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2016-12-07.html" data-id="cl6ccwyf3001b9ty40unbcjf7" data-title="WebStorm 快捷键(Mac)" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebStorm/" rel="tag">WebStorm</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+    <article id="post-2016-12-08" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2016-12-08.html" class="article-date">
+  <time class="dt-published" datetime="2016-12-06T16:00:00.000Z" itemprop="datePublished">2016-12-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2016-12-08.html">js promise</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是promise"><a href="#什么是promise" class="headerlink" title="什么是promise"></a>什么是promise</h3><p> promise是抽象异步处理对象以及对其进行各种操作的组件</p>
+<p> 基于回调函数的异步处理(统一参数使用规则)</p>
+<pre><code> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">getAsync（<span class="string">&#x27;file.txt&#x27;</span>,<span class="keyword">function</span>(<span class="params">error,result</span>)&#123;</span><br><span class="line"> <span class="keyword">if</span>(error)&#123;</span><br><span class="line"> <span class="keyword">throw</span> error;</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;);</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+</code></pre>
+        
+          <p class="article-more-link">
+            <a href="/2016-12-08.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2016-12-08.html" data-id="cl6ccwyf4001g9ty4196m23da" data-title="js promise" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js-promise/" rel="tag">js promise</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+    <article id="post-2016-11-29" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2016-11-29.html" class="article-date">
+  <time class="dt-published" datetime="2016-11-28T16:00:00.000Z" itemprop="datePublished">2016-11-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2016-11-29.html">jekyll 迁移到 hexo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="jekyll-迁移到-hexo-注意事项"><a href="#jekyll-迁移到-hexo-注意事项" class="headerlink" title="jekyll 迁移到 hexo 注意事项"></a>jekyll 迁移到 hexo 注意事项</h2><p>   heightlight 写法改变<br>   image 写法由images标签改为其他写法<br>   table 标签会出现空白<br>   categories 不能加逗号</p>
+<h2 id="hexo-常用命令"><a href="#hexo-常用命令" class="headerlink" title="hexo 常用命令"></a>hexo 常用命令</h2><p>   hexo clean 清除掉public文件<br>   hexo g    生成public文件<br>   hexo d    发布到github上<br>   hexo s    本地调试<br>   hexo new page 添加新的页面</p>
+        
+          <p class="article-more-link">
+            <a href="/2016-11-29.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2016-11-29.html" data-id="cl6ccwyf200189ty4eq0p4t1v" data-title="jekyll 迁移到 hexo" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jekyll-%E8%BF%81%E7%A7%BB%E5%88%B0-hexo/" rel="tag">jekyll 迁移到 hexo</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+    <article id="post-2016-08-30" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2016-08-30.html" class="article-date">
+  <time class="dt-published" datetime="2016-08-29T16:00:00.000Z" itemprop="datePublished">2016-08-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2016-08-30.html">nodejs 快速搭建前后端分离</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="前后端分离问题"><a href="#前后端分离问题" class="headerlink" title="前后端分离问题"></a>前后端分离问题</h2><p>思路:前端用<code>nodejs</code>搭建一个工程的服务,将相关的后端api请求转移到后端服务器中 </p>
+        
+          <p class="article-more-link">
+            <a href="/2016-08-30.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2016-08-30.html" data-id="cl6ccwyf200149ty424s8fmpr" data-title="nodejs 快速搭建前后端分离" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/" rel="tag">前后端分离</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+    <article id="post-2016-07-15" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2016-07-15.html" class="article-date">
+  <time class="dt-published" datetime="2016-07-14T16:00:00.000Z" itemprop="datePublished">2016-07-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/svn/">svn</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2016-07-15.html">svn 超级实用命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>svn log -r version -v<br>查看该版本的提交修改文件路径信息(Changed paths:XXX.*)</li>
+<li>svn log | sed -n ‘&#x2F;USERNAME&#x2F;,&#x2F;—–$&#x2F; p’<br>查看该用户USERNAME,提交的xinx</li>
+<li>svn diff -c version<br>查看该版本的提交文件修改详情</li>
+</ol>
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"clientID":"0d016cc631f508b6e723","clientSecret":"17edd0c4b4116641b3eb685bb9551b1070160b5c","repo":"blog","owner":"janceChun","admin":["janceChun"],"distractionFreeMode":false};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2016-07-15.html" data-id="cl6ccwyf100119ty45epae7o1" data-title="svn 超级实用命令" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/svn/" rel="tag">svn</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+    <article id="post-2016-07-01" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2016-07-01.html" class="article-date">
+  <time class="dt-published" datetime="2016-06-30T16:00:00.000Z" itemprop="datePublished">2016-07-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/docker/">docker</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2016-07-01.html">docker cron任务以及常见问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>关于cron<br>一般来说cron预设有三个地方会有执行脚本设定档,分别为:<br><code>/etc/crontab</code>  crontab 会执行的设定档<br><code>/etc/cron.d/*</code> cron 会执行的设定档<br><code>/var/spool/cron/*</code>  crontab -e  存放的位置<br>一般执行顺序是<code>/etc/cron.d/</code>优先级最高,<code>/etc/cron.d/*</code>次之,<code>/var/spool/cron/*</code>最后.<br>而且防止<code>/etc/cron.d/</code>的配置文件一般<code>* * * * * root bash xxx.sh</code>,<br><code>/var/spool/cron/*</code>则为<code>* * * * * xxx.sh</code>,并且xxx.sh必须具有执行权限 </li>
+<li>当cron执行错误的时候如果系统有邮件发送功能,你会收到cron运行出错的信息</li>
+<li>docker 配置,只要在CMD 的时候启动cron就行了,把你的cron配置放置在<code>/etc/cron.d/</code>下<br>或者crontab crontabconfig就可以啦</li>
+</ol>
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"clientID":"0d016cc631f508b6e723","clientSecret":"17edd0c4b4116641b3eb685bb9551b1070160b5c","repo":"blog","owner":"janceChun","admin":["janceChun"],"distractionFreeMode":false};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2016-07-01.html" data-id="cl6ccwyf0000z9ty4aa0l1r7e" data-title="docker cron任务以及常见问题" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cron/" rel="tag">cron</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+    <article id="post-2016-06-28" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2016-06-28.html" class="article-date">
+  <time class="dt-published" datetime="2016-06-27T16:00:00.000Z" itemprop="datePublished">2016-06-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mysql/">mysql</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2016-06-28.html"> 使用brew安装mysql遇到的若干问题的解决方案</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="用homebrew安装mysql-遇到以下三种情况的解决"><a href="#用homebrew安装mysql-遇到以下三种情况的解决" class="headerlink" title="用homebrew安装mysql 遇到以下三种情况的解决"></a>用homebrew安装mysql 遇到以下三种情况的解决</h2>
+        
+          <p class="article-more-link">
+            <a href="/2016-06-28.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2016-06-28.html" data-id="cl6ccwyez000v9ty4cpw3grwa" data-title=" 使用brew安装mysql遇到的若干问题的解决方案" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql-brew/" rel="tag">mysql brew</a></li></ul>
+
+    </footer>
+  </div>
+  <!--  -->
+</article>
+
+
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+  </nav>
+
+
+            </section>
+            
+              <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Sentry/">Sentry</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sentry-docker/">Sentry docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/WebStorm/">WebStorm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/charles-https/">charles https</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/chrome/">chrome</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/grafana/">grafana</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/html5/">html5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/influxdb/">influxdb</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/npm/">npm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">JavaScript数据类型与数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sentry/" rel="tag">Sentry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebStorm/" rel="tag">WebStorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/" rel="tag">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/charles/" rel="tag">charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/" rel="tag">chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cron/" rel="tag">cron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" rel="tag">css垂直居中</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/" rel="tag">css文字对齐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-telegraf-grafana%E5%AE%9E%E8%B7%B5/" rel="tag">docker telegraf grafana实践</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/font/" rel="tag">font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grafana/" rel="tag">grafana</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5-download/" rel="tag">html5 download</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/htpps/" rel="tag">htpps</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http-%E7%BC%93%E5%AD%98/" rel="tag">http  缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http-%E7%BC%93%E5%AD%98/" rel="tag">http 缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/influxdb-non-negative-derivative/" rel="tag">influxdb non_negative_derivative</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll-%E8%BF%81%E7%A7%BB%E5%88%B0-hexo/" rel="tag">jekyll 迁移到 hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-promise/" rel="tag">js promise</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js%E6%95%B0%E5%AD%97%E6%BA%A2%E5%87%BA/" rel="tag">js数字溢出</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql-brew/" rel="tag">mysql brew</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm-registry/" rel="tag">npm registry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rem/" rel="tag">rem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/" rel="tag">svn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/" rel="tag">前后端分离</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">JavaScript数据类型与数据结构</a> <a href="/tags/Sentry/" style="font-size: 13.33px;">Sentry</a> <a href="/tags/WebStorm/" style="font-size: 10px;">WebStorm</a> <a href="/tags/ajax/" style="font-size: 16.67px;">ajax</a> <a href="/tags/angular/" style="font-size: 20px;">angular</a> <a href="/tags/charles/" style="font-size: 10px;">charles</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/cron/" style="font-size: 10px;">cron</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/css%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" style="font-size: 10px;">css垂直居中</a> <a href="/tags/css%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/" style="font-size: 10px;">css文字对齐</a> <a href="/tags/docker/" style="font-size: 13.33px;">docker</a> <a href="/tags/docker-telegraf-grafana%E5%AE%9E%E8%B7%B5/" style="font-size: 10px;">docker telegraf grafana实践</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/grafana/" style="font-size: 13.33px;">grafana</a> <a href="/tags/html5-download/" style="font-size: 10px;">html5 download</a> <a href="/tags/htpps/" style="font-size: 10px;">htpps</a> <a href="/tags/http-%E7%BC%93%E5%AD%98/" style="font-size: 10px;">http  缓存</a> <a href="/tags/http-%E7%BC%93%E5%AD%98/" style="font-size: 10px;">http 缓存</a> <a href="/tags/influxdb-non-negative-derivative/" style="font-size: 10px;">influxdb non_negative_derivative</a> <a href="/tags/javascript/" style="font-size: 13.33px;">javascript</a> <a href="/tags/jekyll-%E8%BF%81%E7%A7%BB%E5%88%B0-hexo/" style="font-size: 10px;">jekyll 迁移到 hexo</a> <a href="/tags/js-promise/" style="font-size: 10px;">js promise</a> <a href="/tags/js%E6%95%B0%E5%AD%97%E6%BA%A2%E5%87%BA/" style="font-size: 10px;">js数字溢出</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/mysql-brew/" style="font-size: 10px;">mysql brew</a> <a href="/tags/nodejs/" style="font-size: 16.67px;">nodejs</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/npm-registry/" style="font-size: 13.33px;">npm registry</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/" style="font-size: 10px;">前后端分离</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">设计模式</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022-06-18.html">浏览器渲染原理</a>
+          </li>
+        
+          <li>
+            <a href="/2022-06-10.html">rem js计算方案改成css计算</a>
+          </li>
+        
+          <li>
+            <a href="/2021-03-18.html">设计模式-多态</a>
+          </li>
+        
+          <li>
+            <a href="/2019-12-04.html">常见问题CSS设置</a>
+          </li>
+        
+          <li>
+            <a href="/2018-10-18.html">docker sentry 配置企业ldap</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+                
+          </div>
+          <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 janceChun<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+      </div>
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link" >
+      Home
+    </a>
+  
+    <a href="/archives" class="mobile-nav-link" >
+      Archives
+    </a>
+  
+</nav>
+        
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+    </div>
+  </body>
+
+</html>

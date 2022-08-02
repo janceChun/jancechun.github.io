@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="code-eNJWzxzd8J" />
+  <meta name="google-site-verification" content="M18XdAWwaOCGMRZTwx7Bjq4w7IeciCJxhsH3LZv8jtg" />
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-69718833-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69718833-3');
+</script>
+<!-- End Google Analytics -->
+
+  
+  <title>npm package.json 参数加深理解 | janceChun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="npm package.json 理解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="npm package.json 参数加深理解">
+<meta property="og:url" content="https://jancechun.github.io/2017-03-20.html">
+<meta property="og:site_name" content="janceChun">
+<meta property="og:description" content="npm package.json 理解">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-03-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-07-29T08:47:32.755Z">
+<meta property="article:author" content="janceChun">
+<meta property="article:tag" content="npm">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+  <body>
+    <div id="container">
+      <div id="wrap">
+        <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <!-- <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">janceChun</a>
+      </h1>
+      
+    </div> -->
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">
+            Home
+          </a>
+        
+          <a class="main-nav-link" href="/archives">
+            Archives
+          </a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a  id="nav-github" class="nav-icon" target="_blank" rel="noopener" href="https://github.com/janceChun" title="github"></a>
+        
+        
+          <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jancechun.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+          <div class="outer">
+            <section id="main">
+              <article id="post-2017-03-20" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- <div class="article-meta">
+    <a href="/2017-03-20.html" class="article-date">
+  <time class="dt-published" datetime="2017-03-19T16:00:00.000Z" itemprop="datePublished">2017-03-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/npm/">npm</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      npm package.json 参数加深理解
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="package-json-重要的几个参数"><a href="#package-json-重要的几个参数" class="headerlink" title="package.json 重要的几个参数"></a><a target="_blank" rel="noopener" href="https://docs.npmjs.com/files/package.json#dependencies">package.json</a> 重要的几个参数</h2><span id="more"></span> 
+
+<h3 id="repository"><a href="#repository" class="headerlink" title="repository"></a>repository</h3><p>  具体说明你的代码存放地。对想要贡献代码的人来说很有用。如果git repo 在 github上，<br>  那么npm docs命令会找到你<br>  像这样做：</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">&quot;repository&quot; :</span><br><span class="line">  &#123; &quot;type&quot; : &quot;git&quot;</span><br><span class="line">  , &quot;url&quot; : &quot;https://github.com/npm/npm.git&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&quot;repository&quot; :</span><br><span class="line">  &#123; &quot;type&quot; : &quot;svn&quot;</span><br><span class="line">  , &quot;url&quot; : &quot;https://v8.googlecode.com/svn/trunk/&quot;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+<p>  URL必须是公开可用的（可能只是只读）<br>  URL可以直接被vcs程序处理而不需要任何修改<br>  它不应该是你挂在网上的html工程页面的网址。它是给电脑的</p>
+<p>   GitHub, GitHub gist, Bitbucket, or GitLab repositories 你可以在 npm install中<br>   用以下缩写 </p>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">&quot;repository&quot;: &quot;npm/npm&quot;</span><br><span class="line"></span><br><span class="line">&quot;repository&quot;: &quot;gist:11081aaa281&quot;</span><br><span class="line"></span><br><span class="line">&quot;repository&quot;: &quot;bitbucket:example/repo&quot;</span><br><span class="line"></span><br><span class="line">&quot;repository&quot;: &quot;gitlab:another/repo&quot; </span><br><span class="line">   </span><br></pre></td></tr></table></figure>
+<h3 id="dependencies"><a href="#dependencies" class="headerlink" title="dependencies"></a>dependencies</h3><p>  dependencies 是同过一个简单的object来映射包名跟版本范围。版本范围是一个有着一个或者多个space分隔的描述符的string。<br>  dependencies 用tarball 或者 git url<br>  请不要把测试线束或transpilers在依赖对象中。 请参见下面的devDependencies。</p>
+<p>  参考<a target="_blank" rel="noopener" href="https://docs.npmjs.com/misc/semver">semver</a>获取更多版本范围的具体说明<br>  <a target="_blank" rel="noopener" href="http://semver.org/lang/zh-CN/">补充版本号格式</a> (版本格式：主版本号.次版本号.修订号)<br>  主版本号：当你做了不兼容的 API 修改，<br>  次版本号：当你做了向下兼容的功能性新增，<br>  修订号：当你做了向下兼容的问题修正（bug fixes）。</p>
+<ul>
+<li>version 对应具体版本</li>
+<li>～version 不改变主版本号跟次版本号</li>
+<li>^version 不改变主版本号（当主版本号为0开始时 ～version 跟 ^version 时一样的【0.0.0 &lt;1.0.0】） </li>
+<li>git… 参考以下的 ‘Git URLs’ </li>
+<li>user&#x2F;repo 参考以下的 ‘GitHub URLs’ </li>
+<li>tag 特定版本打包发布标记为标签 参考npm-tag</li>
+<li>path&#x2F;path&#x2F;path 参考以下的本地路径</li>
+<li>http:&#x2F;&#x2F;… 参考以下的 ‘URLs 压缩包’ </li>
+<li>range1 || range2  range1 或 range2 都可以通过<br>以下都是合理的</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;dependencies&quot; :</span><br><span class="line">  &#123; &quot;foo&quot; : &quot;1.0.0 - 2.9999.9999&quot;</span><br><span class="line">  , &quot;bar&quot; : &quot;&gt;=1.0.2 &lt;2.1.2&quot;</span><br><span class="line">  , &quot;baz&quot; : &quot;&gt;1.0.2 &lt;=2.3.4&quot;</span><br><span class="line">  , &quot;boo&quot; : &quot;2.0.1&quot;</span><br><span class="line">  , &quot;qux&quot; : &quot;&lt;1.0.0 || &gt;=2.3.1 &lt;2.4.5 || &gt;=2.5.2 &lt;3.0.0&quot;</span><br><span class="line">  , &quot;asd&quot; : &quot;http://asdf.com/asdf.tar.gz&quot; //你可以指定一个url压缩包</span><br><span class="line">  , &quot;til&quot; : &quot;~1.2&quot;</span><br><span class="line">  , &quot;elf&quot; : &quot;~1.2.3&quot;</span><br><span class="line">  , &quot;two&quot; : &quot;2.x&quot;</span><br><span class="line">  , &quot;thr&quot; : &quot;3.3.x&quot;</span><br><span class="line">  , &quot;lat&quot; : &quot;latest&quot;</span><br><span class="line">  , &quot;dyl&quot; : &quot;file:../dyl&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>Git URLs</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git://github.com/user/project.git#commit-ish</span><br><span class="line">git+ssh://user@hostname:project.git#commit-ish</span><br><span class="line">git+ssh://user@hostname/project.git#commit-ish</span><br><span class="line">git+http://user@hostname/project/blah.git#commit-ish</span><br><span class="line">git+https://user@hostname/project/blah.git#commit-ish</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>commit-ish 可以是任何作为参数提供给git checkout 的tag  sha 或者分支branch。默认是master</p>
+<ol start="2">
+<li>GitHub URLs<br> 在版本1.1.65，你可以参考github urls 像 “foo”: “user&#x2F;foo-project”。只是用了<br> git URLs，commit-ish可以加在末尾，例如</li>
+</ol>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     &quot;name&quot;: &quot;foo&quot;,</span><br><span class="line">     &quot;version&quot;: &quot;0.0.0&quot;,</span><br><span class="line">     &quot;dependencies&quot;: &#123;</span><br><span class="line">       &quot;express&quot;: &quot;visionmedia/express&quot;,</span><br><span class="line">       &quot;mocha&quot;: &quot;visionmedia/mocha#4727d357ea&quot;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;   </span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+<h3 id="devDependencies"><a href="#devDependencies" class="headerlink" title="devDependencies"></a>devDependencies</h3><p>  如果有人打算下载使用你的模块在他们的项目里，那么他们kennel不想或者没必要下载安置你使用的<br>  额外测试或者文档框架。<br>  像这种情况，最好吧你额外的选项放在你的devDependencies obeject里面<br>  这些会被下载当你在根目录下执行 npm link 或者 npm install，像其他npm 配置参数一样被管理<br>  更多请参考参考<a target="_blank" rel="noopener" href="https://docs.npmjs.com/misc/config">npm-config</a> </p>
+<p> （简单来说就是开发在项目跟目录下执行npm install 会下载依赖，但是用户使用通过npm install下载你的包<br>   不会下载依赖）</p>
+<h3 id="peerDependencies"><a href="#peerDependencies" class="headerlink" title="peerDependencies"></a>peerDependencies</h3><p>（… 待续）</p>
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"clientID":"0d016cc631f508b6e723","clientSecret":"17edd0c4b4116641b3eb685bb9551b1070160b5c","repo":"blog","owner":"janceChun","admin":["janceChun"],"distractionFreeMode":false};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jancechun.github.io/2017-03-20.html" data-id="cl6ccwyfe002c9ty4avkphk7w" data-title="npm package.json 参数加深理解" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/" rel="tag">npm</a></li></ul>
+
+    </footer>
+  </div>
+  <!-- 
+    
+<nav id="article-nav">
+  
+    <a href="/2017-03-21.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          发布第一个开源 JavaScript Library
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017-03-08.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">influxdb non_negative_derivative</div>
+    </a>
+  
+</nav>
+
+   -->
+</article>
+
+
+
+
+
+            </section>
+            
+              <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Sentry/">Sentry</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sentry-docker/">Sentry docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/WebStorm/">WebStorm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/charles-https/">charles https</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/chrome/">chrome</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/grafana/">grafana</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/html5/">html5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/influxdb/">influxdb</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/npm/">npm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">JavaScript数据类型与数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sentry/" rel="tag">Sentry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebStorm/" rel="tag">WebStorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/" rel="tag">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/charles/" rel="tag">charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/" rel="tag">chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cron/" rel="tag">cron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" rel="tag">css垂直居中</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/" rel="tag">css文字对齐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-telegraf-grafana%E5%AE%9E%E8%B7%B5/" rel="tag">docker telegraf grafana实践</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/font/" rel="tag">font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grafana/" rel="tag">grafana</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5-download/" rel="tag">html5 download</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/htpps/" rel="tag">htpps</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http-%E7%BC%93%E5%AD%98/" rel="tag">http  缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http-%E7%BC%93%E5%AD%98/" rel="tag">http 缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/influxdb-non-negative-derivative/" rel="tag">influxdb non_negative_derivative</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll-%E8%BF%81%E7%A7%BB%E5%88%B0-hexo/" rel="tag">jekyll 迁移到 hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-promise/" rel="tag">js promise</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js%E6%95%B0%E5%AD%97%E6%BA%A2%E5%87%BA/" rel="tag">js数字溢出</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql-brew/" rel="tag">mysql brew</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm-registry/" rel="tag">npm registry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rem/" rel="tag">rem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/" rel="tag">svn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/" rel="tag">前后端分离</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">JavaScript数据类型与数据结构</a> <a href="/tags/Sentry/" style="font-size: 13.33px;">Sentry</a> <a href="/tags/WebStorm/" style="font-size: 10px;">WebStorm</a> <a href="/tags/ajax/" style="font-size: 16.67px;">ajax</a> <a href="/tags/angular/" style="font-size: 20px;">angular</a> <a href="/tags/charles/" style="font-size: 10px;">charles</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/cron/" style="font-size: 10px;">cron</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/css%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" style="font-size: 10px;">css垂直居中</a> <a href="/tags/css%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/" style="font-size: 10px;">css文字对齐</a> <a href="/tags/docker/" style="font-size: 13.33px;">docker</a> <a href="/tags/docker-telegraf-grafana%E5%AE%9E%E8%B7%B5/" style="font-size: 10px;">docker telegraf grafana实践</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/grafana/" style="font-size: 13.33px;">grafana</a> <a href="/tags/html5-download/" style="font-size: 10px;">html5 download</a> <a href="/tags/htpps/" style="font-size: 10px;">htpps</a> <a href="/tags/http-%E7%BC%93%E5%AD%98/" style="font-size: 10px;">http  缓存</a> <a href="/tags/http-%E7%BC%93%E5%AD%98/" style="font-size: 10px;">http 缓存</a> <a href="/tags/influxdb-non-negative-derivative/" style="font-size: 10px;">influxdb non_negative_derivative</a> <a href="/tags/javascript/" style="font-size: 13.33px;">javascript</a> <a href="/tags/jekyll-%E8%BF%81%E7%A7%BB%E5%88%B0-hexo/" style="font-size: 10px;">jekyll 迁移到 hexo</a> <a href="/tags/js-promise/" style="font-size: 10px;">js promise</a> <a href="/tags/js%E6%95%B0%E5%AD%97%E6%BA%A2%E5%87%BA/" style="font-size: 10px;">js数字溢出</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/mysql-brew/" style="font-size: 10px;">mysql brew</a> <a href="/tags/nodejs/" style="font-size: 16.67px;">nodejs</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/npm-registry/" style="font-size: 13.33px;">npm registry</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/" style="font-size: 10px;">前后端分离</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">设计模式</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022-06-18.html">浏览器渲染原理</a>
+          </li>
+        
+          <li>
+            <a href="/2022-06-10.html">rem js计算方案改成css计算</a>
+          </li>
+        
+          <li>
+            <a href="/2021-03-18.html">设计模式-多态</a>
+          </li>
+        
+          <li>
+            <a href="/2019-12-04.html">常见问题CSS设置</a>
+          </li>
+        
+          <li>
+            <a href="/2018-10-18.html">docker sentry 配置企业ldap</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+                
+          </div>
+          <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 janceChun<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+      </div>
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link" >
+      Home
+    </a>
+  
+    <a href="/archives" class="mobile-nav-link" >
+      Archives
+    </a>
+  
+</nav>
+        
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+    </div>
+  </body>
+
+</html>
