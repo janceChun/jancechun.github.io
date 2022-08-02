@@ -459,13 +459,6 @@
   </url>
   
   <url>
-    <loc>https://jancechun.github.io/tags/mysql-brew/</loc>
-    <lastmod>2022-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://jancechun.github.io/tags/docker/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -474,6 +467,13 @@
   
   <url>
     <loc>https://jancechun.github.io/tags/cron/</loc>
+    <lastmod>2022-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jancechun.github.io/tags/mysql-brew/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -494,13 +494,6 @@
   </url>
   
   <url>
-    <loc>https://jancechun.github.io/tags/jekyll-%E8%BF%81%E7%A7%BB%E5%88%B0-hexo/</loc>
-    <lastmod>2022-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://jancechun.github.io/tags/WebStorm/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -508,7 +501,7 @@
   </url>
   
   <url>
-    <loc>https://jancechun.github.io/tags/js-promise/</loc>
+    <loc>https://jancechun.github.io/tags/jekyll-%E8%BF%81%E7%A7%BB%E5%88%B0-hexo/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -522,14 +515,14 @@
   </url>
   
   <url>
-    <loc>https://jancechun.github.io/tags/docker-telegraf-grafana%E5%AE%9E%E8%B7%B5/</loc>
+    <loc>https://jancechun.github.io/tags/js-promise/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://jancechun.github.io/tags/html5-download/</loc>
+    <loc>https://jancechun.github.io/tags/docker-telegraf-grafana%E5%AE%9E%E8%B7%B5/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -544,6 +537,13 @@
   
   <url>
     <loc>https://jancechun.github.io/tags/npm-registry/</loc>
+    <lastmod>2022-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jancechun.github.io/tags/html5-download/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -692,14 +692,14 @@
   </url>
   
   <url>
-    <loc>https://jancechun.github.io/categories/hexo/</loc>
+    <loc>https://jancechun.github.io/categories/WebStorm/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://jancechun.github.io/categories/WebStorm/</loc>
+    <loc>https://jancechun.github.io/categories/hexo/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -720,14 +720,14 @@
   </url>
   
   <url>
-    <loc>https://jancechun.github.io/categories/html5/</loc>
+    <loc>https://jancechun.github.io/categories/npm/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://jancechun.github.io/categories/npm/</loc>
+    <loc>https://jancechun.github.io/categories/html5/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
